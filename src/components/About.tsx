@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, easeOut } from 'framer-motion'; // ✅ Corrected ease import
 import { useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
 import Image from 'next/image';
@@ -23,7 +23,7 @@ export default function About() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: 'easeOut',
+        ease: easeOut, // ✅ Correct usage
       },
     },
   };
