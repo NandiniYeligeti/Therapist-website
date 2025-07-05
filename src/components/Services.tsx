@@ -1,5 +1,5 @@
 'use client';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, easeOut } from 'framer-motion'; // ✅ Import built-in easing
 import { useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
 import Image from 'next/image';
@@ -23,7 +23,7 @@ export default function Services() {
       transition: {
         duration: 0.6,
         delay: i * 0.2,
-        ease: 'easeOut',
+        ease: easeOut, // ✅ Use valid easing function
       },
     }),
   };
@@ -85,7 +85,6 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Bottom Info Box */}
         <div className="bg-[#FFF4EE] rounded-2xl p-8 max-w-4xl mx-auto mt-16 shadow-lg text-center">
           <h3 className="text-2xl font-bold text-[#D0634A] mb-3 tracking-tight">
             Session Fees & Professional Details
