@@ -116,7 +116,7 @@ export default function ContactPage() {
               required
             />
             <label htmlFor="robot" className="text-sm text-gray-600">
-              I'm not a robot
+              I&rsquo;m not a robot
             </label>
           </div>
 
