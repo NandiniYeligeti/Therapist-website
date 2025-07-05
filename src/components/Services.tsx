@@ -2,6 +2,7 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Services() {
   const ref = useRef(null);
@@ -68,7 +69,14 @@ export default function Services() {
               variants={cardVariants}
               className="bg-white rounded-xl overflow-hidden shadow-md border border-orange-100 hover:shadow-lg transition-all"
             >
-              <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
+              <div className="w-full h-48 relative">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
               <div className="p-6 text-left">
                 <h3 className="text-xl font-semibold text-orange-600 mb-2">{service.title}</h3>
                 <p className="text-gray-700 mb-4">{service.desc}</p>
@@ -77,39 +85,31 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Bottom box */}
         {/* Bottom Info Box */}
-<div className="bg-[#FFF4EE] rounded-2xl p-8 max-w-4xl mx-auto mt-16 shadow-lg text-center">
-  <h3 className="text-2xl font-bold text-[#D0634A] mb-3 tracking-tight">
-     Session Fees & Professional Details
-  </h3>
+        <div className="bg-[#FFF4EE] rounded-2xl p-8 max-w-4xl mx-auto mt-16 shadow-lg text-center">
+          <h3 className="text-2xl font-bold text-[#D0634A] mb-3 tracking-tight">
+            Session Fees & Professional Details
+          </h3>
 
-  <p className="text-gray-700 mb-6 text-base leading-relaxed">
-    We believe therapy is an investment in your well-being. The rates below are designed to reflect the dedicated, compassionate care you’ll receive. Every session is a step toward healing, growth, and thriving.
-  </p>
+          <p className="text-gray-700 mb-6 text-base leading-relaxed">
+            We believe therapy is an investment in your well-being. The rates below are designed to reflect the dedicated, compassionate care you’ll receive. Every session is a step toward healing, growth, and thriving.
+          </p>
 
-  {/* Fee Pills */}
-  <div className="flex flex-wrap justify-center gap-4 mb-6 text-sm font-semibold text-[#D0634A]">
-    <span className="bg-white px-5 py-2 rounded-full border border-[#D0634A] shadow-sm">
-      $240 / Couples Session
-    </span>
-    <span className="bg-white px-5 py-2 rounded-full border border-[#D0634A] shadow-sm">
-      $200 / Individual Session
-    </span>
-  </div>
+          <div className="flex flex-wrap justify-center gap-4 mb-6 text-sm font-semibold text-[#D0634A]">
+            <span className="bg-white px-5 py-2 rounded-full border border-[#D0634A] shadow-sm">
+              $240 / Couples Session
+            </span>
+            <span className="bg-white px-5 py-2 rounded-full border border-[#D0634A] shadow-sm">
+              $200 / Individual Session
+            </span>
+          </div>
 
-  {/* Office Hours */}
-  <div className="text-black text-left md:text-center text-base">
-    <p className="mt-4 font-semibold">
-      🕒 <span className="font-bold">Office Hours:</span>
-    </p>
-    <p>In-person: Tue & Thu, 10 AM – 6 PM</p>
-    <p>Virtual via Zoom: Mon, Wed & Fri, 1 PM – 5 PM</p>
-
-    
-  </div>
-</div>
-
+          <div className="text-black text-left md:text-center text-base">
+            <p className="mt-4 font-semibold">🕒 <span className="font-bold">Office Hours:</span></p>
+            <p>In-person: Tue & Thu, 10 AM – 6 PM</p>
+            <p>Virtual via Zoom: Mon, Wed & Fri, 1 PM – 5 PM</p>
+          </div>
+        </div>
       </div>
     </section>
   );
