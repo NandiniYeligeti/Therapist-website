@@ -61,7 +61,7 @@ export default function About() {
           </p>
           <p className="text-lg text-gray-700 leading-relaxed mb-5">
             Drawing from evidence-based practices like cognitive-behavioral therapy (CBT) and mindfulness, she tailors
-            each session to meet your unique needs. Whether you're visiting her calm and welcoming office on Maplewood
+            each session to meet your unique needs. Whether you&rsquo;re visiting her calm and welcoming office on Maplewood
             Drive or connecting virtually through secure Zoom sessions, Dr. Blake is committed to helping you feel safe,
             supported, and empowered.
           </p>
@@ -70,11 +70,11 @@ export default function About() {
           </p>
         </motion.div>
 
-        
+
       </div>
-      
+
     </section>
 
-    
+
   );
 }

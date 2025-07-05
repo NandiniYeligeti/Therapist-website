@@ -89,8 +89,9 @@ export default function ContactPage() {
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 mb-1"
             />
             <p className="text-sm text-gray-500">
-              Let us know when you're typically available for a call or consultation
+              Let us know when you&rsquo;re typically available for a call or consultation
             </p>
+
           </div>
 
           <select
@@ -162,7 +163,7 @@ export default function ContactPage() {
             </a>
           </p>
 
-          
+
           <div className="mt-6">
             <p className="text-xs text-gray-400">
               © 2025 Dr. Serena Blake, Psy.D. All rights reserved.
