@@ -15,7 +15,10 @@ export default function ContactPage() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    const { name, value, type, checked } = e.target;
+    const target = e.target as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+    const { name, value, type } = target;
+    const checked = type === 'checkbox' ? (target as HTMLInputElement).checked : undefined;
+
     setForm((prev) => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
@@ -91,7 +94,6 @@ export default function ContactPage() {
             <p className="text-sm text-gray-500">
               Let us know when you&rsquo;re typically available for a call or consultation
             </p>
-
           </div>
 
           <select
@@ -138,7 +140,7 @@ export default function ContactPage() {
         </div>
       </form>
 
-      {/* 👇 Footer Section Starts Here */}
+      {/* Footer Section */}
       <div className="mt-16 pt-10 text-center text-gray-700 text-sm">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">
           Dr. Serena Blake, Psy.D., Licensed Clinical Psychologist
@@ -163,7 +165,6 @@ export default function ContactPage() {
             </a>
           </p>
 
-
           <div className="mt-6">
             <p className="text-xs text-gray-400">
               © 2025 Dr. Serena Blake, Psy.D. All rights reserved.
@@ -171,7 +172,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-      {/* 👆 Footer Section Ends */}
     </div>
   );
 }
