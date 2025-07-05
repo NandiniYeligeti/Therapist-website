@@ -3,6 +3,7 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
+import Image from 'next/image';
 
 export default function About() {
   const ref = useRef(null);
@@ -37,9 +38,11 @@ export default function About() {
           animate={controls}
           variants={fadeInVariant}
         >
-          <img
+          <Image
             src="/image2.jpg"
             alt="Dr. Serena Blake"
+            width={600}
+            height={500}
             className="rounded-2xl shadow-xl w-full h-auto object-cover"
           />
         </motion.div>
@@ -69,12 +72,7 @@ export default function About() {
             <strong>🎓 Experience:</strong> 8 years of practice, 500+ sessions
           </p>
         </motion.div>
-
-
       </div>
-
     </section>
-
-
   );
 }
